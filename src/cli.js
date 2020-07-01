@@ -1,0 +1,1 @@
+export const lala = () => console.log("deu certo")
