@@ -7,7 +7,7 @@ const readPath = require('./readdirectories.js');
 
 const path = require('path');
 
-function checkFilesUser(file, validation) {
+function checkFilesUser(file, validation, stats) {
     if (/\.md/.test(file)) {
         mdLinks(file)
             .then((result) => {
