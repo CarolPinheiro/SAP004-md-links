@@ -9,3 +9,5 @@ console.log(res.statusCode)
     }
 
 }
+
+module.exports = checkLinks;
