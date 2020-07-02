@@ -4,7 +4,8 @@
   "description": "Um pacote responsável por analisar arquivos markdown e extrair deles os links",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "lib": "lib"
   },
   "scripts": {
     "test": "jest --verbose --coverage",
@@ -26,6 +27,13 @@
     "url": "https://github.com/CarolPinheiro/SAP004-md-links/issues"
   },
   "homepage": "https://github.com/CarolPinheiro/SAP004-md-links#readme",
+  "bin": {
+    "md-links": "cli.js",
+    "CarolPinheiro/SAP004-md-links": "cli.js"
+  },
+  "publishConfig": {
+    "acess": "public"
+  },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-jest": "^26.1.0",
