@@ -9,7 +9,7 @@ function checkLinks(obj, validation = false) {
     })
       .on('error', (e) => console.error(e.code));
   } else {
-    console.log(`Link: ${chalk.blueBright.bold(obj.href)} Domínio: ${chalk.cyanBright.bold(obj.text)} Path:${obj.fileName}`);
+    console.log(`\n Link: ${chalk.blueBright.bold(obj.href)} \n Domínio: ${chalk.cyanBright.bold(obj.text)} \n Path:${obj.file}`);
 
   }
 
