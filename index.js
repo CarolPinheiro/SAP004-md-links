@@ -9,30 +9,16 @@ function mdLinks(file) {
       if (err) {
         rejected(err.message);
       } else {
-
-        //const regex = data.match(/\[[^\]]*\]\([^)]*\)*/gm);
-
-        const regex = data.match(/\[(\S.*)\][\s]?\(((http[s]?:\/\/|www\.)\w.*)\)/gm);
-        //console.log(regex)
-        regex.forEach((i) => {
-         // console.log(i)
-          arr.push({
-            text: i.match(/\[(\S.*)\][\s]?/)[1],
-            href: i.match(/[\s]?\(((http[s]?:\/\/|www\.)\w.*)\)/)[1],
-            fileName: file
-          });
+        const regex = data.match(/\[([^\]]*)\]\(([^)]*)/gm);
+        const textResult = regex.map((i) => {
+          const result = i.match(/\[([^\]]*)\]\(([^)]*)/);
+          return { text: result[1], href: result[2], file }
         });
-        resolved(arr);
+        resolved(textResult);
         arr = []
       }
     });
   });
 }
 
-
-// mdLinks(process.argv[2])
 module.exports = mdLinks;
-
-//\[(\S.*)\][\s]?\(((http[s]?:\/\/|www\.)\w.*)(?=\),)
-
-//\[[^\]]*\]\([^)]*\)*
