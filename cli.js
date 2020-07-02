@@ -9,7 +9,7 @@ const file = process.argv[2];
 mdLinks(file)
   .then((result) => {
     result.forEach((item) => {
-      checkLinks(item);
+      console.log(item)
     });
   })
   .catch((error) => console.log(error));
