@@ -3,6 +3,7 @@
 const checkLinks = require('./checkhttp.js')
 
 const mdLinks = require('./index.js');
+const readPath = require('./readdirectories.js');
 
 const path = require('path');
 
