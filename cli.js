@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const checkLinks = require('../checkhttp.js')
+const checkLinks = require('./checkhttp.js')
 
 const mdLinks = require('./index.js');
 

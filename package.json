@@ -28,8 +28,8 @@
   },
   "homepage": "https://github.com/CarolPinheiro/SAP004-md-links#readme",
   "bin": {
-    "md-links": "./src/cli.js",
-    "CarolPinheiro/SAP004-md-links": "./src/cli.js"
+    "md-links": "cli.js",
+    "CarolPinheiro/SAP004-md-links": "cli.js"
   },
   "publishConfig": {
     "acess": "public"
