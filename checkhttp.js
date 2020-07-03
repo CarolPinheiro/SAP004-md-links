@@ -15,10 +15,7 @@ function checkLinks(filteredResult, validation, stats) {
       if(res.statusCode>=400 && res.statusCode<500){
         arrayla.push(res.statusCode)
         console.log(`All:${setArr.size} \n Unique: ${arrWithLinks.length} \n Broken: ${arrayla.length} `)
-
-      }
-      // console.log(res.statusCode>400? brokenLink+=1: res.statusCode ==='ENOTFOUND'? brokenLink+=1: "foi")
-    
+      }    
     })
       .on('error', (e) => console.error(e.code))
   }
@@ -43,8 +40,10 @@ function checkLinks(filteredResult, validation, stats) {
   
   }
   else {
+    // console.log(filteredResult)
+    filteredResult.map(obj => {
     console.log(`\n Link: ${chalk.blueBright.bold(obj.href)} \n Domínio: ${chalk.cyanBright.bold(obj.text)} \n Path:${obj.file}`);
-
+    })
 }
 }
 
