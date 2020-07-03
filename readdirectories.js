@@ -9,10 +9,8 @@ function readPath(readPath, validation, stats) {
             mdLinks(file)
                 .then((result) => {
                     const filteredResult = result.filter( item =>/(http[s]?|www)/.test(item.href) )
-                    filteredResult.forEach((obj) => {
+                        checkLinks(filteredResult, validation, stats)
 
-                        checkLinks(obj, validation, stats)
-                    })
                 })
 
         }
