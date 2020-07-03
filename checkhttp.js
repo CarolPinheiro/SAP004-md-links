@@ -12,7 +12,7 @@ function checkLinks(filteredResult, validation, stats) {
         https.get(obj.href, (res) => {
           if (res.statusCode >= 400 && res.statusCode < 500) {
             arrError.push(res.statusCode)
-            console.log(`All:${setArr.size} \n Unique: ${arrWithLinks.length} \n Broken: ${arrError.length} `)
+            console.log(`All:${filteredResult.length} \n Unique: ${setArr.size} \n Broken: ${arrError.length} `)
           }
         })
           .on('error', (e) => console.log(e))
