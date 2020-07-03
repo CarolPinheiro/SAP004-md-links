@@ -1,4 +1,9 @@
-const mdLinks = require('../index.js');
+ const mdLinks = require('../index.js');
+
+const { TestScheduler } = require("jest")
+
+const checkLinks = require('../checkhttp.js')
+const chalk = require('chalk')
 
 describe('mdLinks', () => {
     test('mdLinks should be a function', (done) => {
@@ -25,3 +30,17 @@ describe('mdLinks', () => {
         })
     })
 })
+
+// const result = {href:'https://nodejs.org/pt-br/', text:'Node js', file:'./test/text.md'}
+// const resultError = {href:'heelolink', text:'Node js', file:'./test/text.md'}
+
+// it('it should return only the name of the link, the reference and the absolute Path', () => {
+//     console.log = jest.fn();
+//     checkLinks(result);
+//     expect(console.log).toHaveBeenCalledWith(`\n Link: ${chalk.blueBright.bold('https://nodejs.org/pt-br/')} \n Domínio: ${chalk.cyanBright.bold('Node js')} \n Path:${'./test/text.md'}`);;
+//   });
+// it('console.log the text "hello"', () => {
+//     console.log = jest.fn();
+//     checkLinks(resultError, '--validate');
+//     expect(console.log).toHaveBeenCalledWith(`\n Link: ${chalk.blueBright.bold('https://nodejs.org/pt-br/')} \n Domínio: ${chalk.cyanBright.bold('Node js')} \n httpStatus:${chalk.green.bold(200)} \n Message:${chalk.yellow.bold('OK')}`);
+//   });
