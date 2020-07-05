@@ -1,14 +1,19 @@
 const readdir = require('readdir-recursive');
 const readFile = require('./readFileAndExtractData');
+const chalk = require('chalk')
 
-
-function readPath(path, options) {
+const arr = []
+function readPath(path, options = []) {
   return new Promise((resolved) => {
     readdir.file(path, (file) => {
       if (/\.md/g.test(file) && !/node_modules/g.test(file)) {
-        resolved(readFile(file, options))
+        arr.push(file)
+        setTimeout(() => {
+          arr.length > 1 ? resolved(Promise.all(arr.map(i => readFile(i, options)))) : resolved(readFile(arr[0], options))
+        }, 3000)
       }
     })
   })
 }
+
 module.exports = readPath;
