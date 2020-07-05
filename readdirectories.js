@@ -1,8 +1,7 @@
 const readdir = require('readdir-recursive');
 const readFile = require('./readFileAndExtractData');
-const chalk = require('chalk')
-
 const arr = []
+
 function readPath(path, options = []) {
   return new Promise((resolved) => {
     readdir.file(path, (file) => {
