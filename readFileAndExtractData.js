@@ -7,7 +7,7 @@ function readFile(file, options) {
             if (err) {
                 rejected(err.message);
             }
-            const regex = data.match(/\[([^\]]*)\]\(([^)]*)/gm);
+            const regex = data.match(/\[([^\]]*)\]\((https[^)]*)/gm);
             const validate = regex.map(i => {
                 const result = i.match(/\[([^\]]*)\]\(([^)]*)/);
                 return checkIfALinkExist(result, file)
