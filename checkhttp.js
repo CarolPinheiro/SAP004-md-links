@@ -1,18 +1,15 @@
 const https = require('https')
-
-function checkIfALinkExist(resultado, file) {
+function checkIfALinkExist(results, file) {
   return new Promise((resolved) => {
-
-    https.get(resultado[2], (res) => {
-      resolved({ text: resultado[1], href: resultado[2], file, statusCode: res.statusCode, message: res.statusMessage })
-    })
-      .on('error', (e) => {
-        resolved({ text: resultado[1], href: resultado[2], file, statusCode: 404, message: e.message })
+      https.get(results[2], (res) => {
+        resolved({ text: results[1], href: results[2], file, statusCode: res.statusCode, message: res.statusMessage })
       })
+        .on('error', (e) => {
+          resolved({ text: results[1], href: results[2], file, statusCode: 404, message: e.message })
+        })
 
   })
 }
-
 
 module.exports = checkIfALinkExist;
 
