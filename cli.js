@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-const mdLinks = require('./src/index.js');
+const mdLinks = require('./index.js');
 const chalk = require('chalk');
 const path = require('path');
 const statsReturn = require('./src/stats')
