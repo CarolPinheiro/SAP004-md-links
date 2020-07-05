@@ -1,6 +1,6 @@
 const fs = require('fs');
-const readPath = require('./readdirectories');
-const readFile = require('./readFileAndExtractData');
+const readPath = require('./src/readdirectories');
+const readFile = require('./src/readFileAndExtractData');
 
 function mdLinks(file, options=[]) {
   return new Promise((resolved, rejected) => {

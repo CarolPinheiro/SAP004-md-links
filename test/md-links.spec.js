@@ -27,7 +27,7 @@ describe('mdLinks', () => {
       })
   })
   test('should return the objects of all the files in the directory with their validation', (done) => {
-    mdLinks('./test/', '--validate')
+    mdLinks('test/', '--validate')
       .then(result => {
         expect(result).toEqual([
           { href: 'https://nodejs.org/pt-br/', text: 'Node js', file: 'test\\text.md', message: "OK", statusCode: 200, },
@@ -38,7 +38,7 @@ describe('mdLinks', () => {
   })
 
   test('should return the object with all the files in the directory', (done) => {
-    mdLinks('./test/')
+    mdLinks('test/')
       .then(result => {
         expect(result).toEqual([[{
           "file": "test\\text.md",
