@@ -2,7 +2,7 @@ const checkIfALinkExist = require('./checkhttp');
 const fs = require('fs');
 
 function readFile(file, options) {
-    return new Promise((resolved) => {
+    return new Promise((resolved, rejected) => {
         fs.readFile(file, 'utf-8', (err, data) => {
             if (err) {
                 rejected(err.message);
