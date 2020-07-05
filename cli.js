@@ -1,7 +1,7 @@
 #!/usr/bin/env node
-const mdLinks = require('./index.js');
+const mdLinks = require('./src/index.js');
 const chalk = require('chalk');
-const statsReturn = require('./stats')
+const statsReturn = require('./src/stats')
 
 
 function checkUsersNeed(file, validadeOrStats) {
@@ -22,12 +22,12 @@ function checkUsersNeed(file, validadeOrStats) {
             console.log(`\n 
             Text:${chalk.cyan.bold(e.text)} 
             Href:${chalk.magenta.bold(e.href)} 
-            Path:${chalk.blue.bold(e.file)}
+            Relative path to current location:${chalk.blue.bold(e.file)}
             StatusCode:${e.statusCode > 400 && e.statusCode < 500 ? chalk.red.bold(e.statusCode) : chalk.green.bold(e.statusCode)}
             Status Message:${chalk.white.bold(e.message)} \n`)
           }
           else {
-            console.log(`\n Text:${chalk.cyan.bold(e.text)} \n Href:${chalk.magenta.bold(e.href)} \n Path:${chalk.blue.bold(e.file)}`)
+            console.log(`\n Text:${chalk.cyan.bold(e.text)} \n Href:${chalk.magenta.bold(e.href)} \n Relative path to current location:${chalk.blue.bold(e.file)}`)
 
           }
         })
