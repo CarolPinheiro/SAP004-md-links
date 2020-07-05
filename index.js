@@ -1,4 +1,6 @@
 const fs = require('fs');
+const checkIfALinkExist = require('./checkhttp');
+const readPath = require('./readdirectories');
 
 function mdLinks(file, options) {
   return new Promise((resolved, rejected) => {
@@ -21,7 +23,6 @@ function mdLinks(file, options) {
               const result = i.match(/\[([^\]]*)\]\(([^)]*)/);
               return { text: result[1], href: result[2], file, }
             });
-            console.log(textResult)
             options === '--validate' ? resolved(Promise.all(validate)) : resolved(Promise.resolve(textResult))
 
           }
