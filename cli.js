@@ -1,28 +1,14 @@
 #!/usr/bin/env node
-
-const checkLinks = require('./checkhttp.js')
-
 const mdLinks = require('./index.js');
-const readPath = require('./readdirectories.js');
+const chalk = require('chalk');
 
 const path = require('path');
 
-function checkFilesUser(file, validation, stats) {
-    console.log()
-    if (/\.md/.test(file)) {
-        mdLinks(file)
-            .then((result) => {
-                const filteredResult = result.filter( item =>/(http[s]?|www)/.test(item.href) )
-                    checkLinks(filteredResult, validation, stats);
-            })
-            .catch((error) => console.log(error));
-    } else {
-        readPath(file, validation, stats)
-    }
-}
-
-const file = process.argv[2]
-const filePath = path.resolve(file)
-const validation = process.argv[3]
-const stats = process.argv[4]
-checkFilesUser(filePath, validation, stats)
+const file = process.argv[2];
+const validadeOrStats = process.argv[3]
+mdLinks(file, validadeOrStats)
+.then(res => {
+    res.map(e=> {
+        console.log(`\n Text:${chalk.cyan.bold(e.text)} \n Href:${chalk.magenta.bold(e.href)} \n Path:${chalk.blue.bold(e.file)}`)
+    })
+})
