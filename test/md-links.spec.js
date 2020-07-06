@@ -74,4 +74,11 @@ describe('checkLinks', () => {
         done();
       });
   });
+  test('Return an Error when the link is bad formatted', (done) => {
+    checkLinks(['', '', 'www.google.com'], '../test/text.md')
+      .catch((err) => {
+        expect(err).toBe('The link is bad formatted');
+        done();
+      });
+  });
 });
