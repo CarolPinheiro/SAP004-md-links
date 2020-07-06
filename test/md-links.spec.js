@@ -1,4 +1,5 @@
 const mdLinks = require('../index.js');
+const mock = require('./mock.js');
 
 describe('mdLinks', () => {
   test('mdLinks should be a function', (done) => {
@@ -9,62 +10,21 @@ describe('mdLinks', () => {
   test('should return an array with the objects well defined', (done) => {
     mdLinks('./test/text.md')
       .then((result) => {
-        expect(result).toEqual([
-          {
-            href: 'http://nodejs.org/pt-br/',
-            text: 'Node js',
-            file: './test/text.md',
-          },
-          {
-            href: 'https://developers.google.com/v8/',
-            text: 'motor de JavaScript V8 do Chrome',
-            file: './test/text.md',
-          },
-        ]);
+        expect(result).toEqual(mock.arrOfObj);
         done();
       });
   });
   test('should return the objects with their validation', (done) => {
     mdLinks('./test/text.md', '--validate')
       .then((result) => {
-        expect(result).toEqual([
-          {
-            href: 'http://nodejs.org/pt-br/',
-            text: 'Node js',
-            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
-            message: 'Moved Permanently',
-            statusCode: 301,
-          },
-          {
-            href: 'https://developers.google.com/v8/',
-            text: 'motor de JavaScript V8 do Chrome',
-            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
-            message: 'Moved Permanently',
-            statusCode: 301,
-          },
-        ]);
+        expect(result).toEqual(mock.arrOfObjValidated);
         done();
       });
   });
   test('should return the objects of all the files in the directory with their validation', (done) => {
     mdLinks('test/', '--validate')
       .then((result) => {
-        expect(result).toEqual([
-          {
-            href: 'http://nodejs.org/pt-br/',
-            text: 'Node js',
-            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
-            message: 'Moved Permanently',
-            statusCode: 301,
-          },
-          {
-            href: 'https://developers.google.com/v8/',
-            text: 'motor de JavaScript V8 do Chrome',
-            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
-            message: 'Moved Permanently',
-            statusCode: 301,
-          },
-        ]);
+        expect(result).toEqual(mock.arrOfObjValidated);
         done();
       });
   });
@@ -72,27 +32,7 @@ describe('mdLinks', () => {
   test('should return the object with all the files in the directory e2', (done) => {
     mdLinks('test/')
       .then((result) => {
-        expect(result).toEqual([[{
-          file: 'test\\text.md',
-          href: 'http://nodejs.org/pt-br/',
-          text: 'Node js',
-        },
-        {
-          file: 'test\\text.md',
-          href: 'https://developers.google.com/v8/',
-          text: 'motor de JavaScript V8 do Chrome',
-        }],
-        [{
-          file: 'test\\text.md',
-          href: 'http://nodejs.org/pt-br/',
-          text: 'Node js',
-        }, {
-          file: 'test\\text.md',
-          href: 'https://developers.google.com/v8/',
-          text: 'motor de JavaScript V8 do Chrome',
-        },
-        ],
-        ]);
+        expect(result).toEqual([mock.arrOfObj, mock.arrOfObj]);
         done();
       });
   });
