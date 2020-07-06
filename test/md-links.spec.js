@@ -11,7 +11,7 @@ describe('mdLinks', () => {
       .then((result) => {
         expect(result).toEqual([
           {
-            href: 'https://nodejs.org/pt-br/',
+            href: 'http://nodejs.org/pt-br/',
             text: 'Node js',
             file: './test/text.md',
           },
@@ -29,16 +29,16 @@ describe('mdLinks', () => {
       .then((result) => {
         expect(result).toEqual([
           {
-            href: 'https://nodejs.org/pt-br/',
+            href: 'http://nodejs.org/pt-br/',
             text: 'Node js',
-            file: './test/text.md',
-            message: 'OK',
-            statusCode: 200,
+            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
+            message: 'Moved Permanently',
+            statusCode: 301,
           },
           {
             href: 'https://developers.google.com/v8/',
             text: 'motor de JavaScript V8 do Chrome',
-            file: './test/text.md',
+            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
             message: 'Moved Permanently',
             statusCode: 301,
           },
@@ -51,16 +51,16 @@ describe('mdLinks', () => {
       .then((result) => {
         expect(result).toEqual([
           {
-            href: 'https://nodejs.org/pt-br/',
+            href: 'http://nodejs.org/pt-br/',
             text: 'Node js',
-            file: 'test\\text.md',
-            message: 'OK',
-            statusCode: 200,
+            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
+            message: 'Moved Permanently',
+            statusCode: 301,
           },
           {
             href: 'https://developers.google.com/v8/',
             text: 'motor de JavaScript V8 do Chrome',
-            file: 'test\\text.md',
+            file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\SAP004-md-links\\test\\text.md',
             message: 'Moved Permanently',
             statusCode: 301,
           },
@@ -69,12 +69,12 @@ describe('mdLinks', () => {
       });
   });
 
-  test('should return the object with all the files in the directory', (done) => {
+  test('should return the object with all the files in the directory e2', (done) => {
     mdLinks('test/')
       .then((result) => {
         expect(result).toEqual([[{
           file: 'test\\text.md',
-          href: 'https://nodejs.org/pt-br/',
+          href: 'http://nodejs.org/pt-br/',
           text: 'Node js',
         },
         {
@@ -84,7 +84,7 @@ describe('mdLinks', () => {
         }],
         [{
           file: 'test\\text.md',
-          href: 'https://nodejs.org/pt-br/',
+          href: 'http://nodejs.org/pt-br/',
           text: 'Node js',
         }, {
           file: 'test\\text.md',
