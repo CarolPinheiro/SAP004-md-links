@@ -30,4 +30,6 @@ const arrOfObjValidated = [
   },
 ];
 
-module.exports = { arrOfObj, arrOfObjValidated };
+const checkLinksObj = ['[Node js](http://noddddejs.org/pt-br/)', 'Node js', 'http://noddddejs.org/pt-br/'];
+
+module.exports = { arrOfObj, arrOfObjValidated, checkLinksObj };

@@ -1,4 +1,5 @@
 const mdLinks = require('../index.js');
+const checkLinks = require('../src/checkhttp');
 const mock = require('./mock.js');
 
 describe('mdLinks', () => {
@@ -41,6 +42,22 @@ describe('mdLinks', () => {
     mdLinks('./tests/text.md')
       .catch((err) => {
         expect(err).toBe('Sorry, but there is no archive with that name in this directory');
+        done();
+      });
+  });
+});
+
+describe('checkLinks', () => {
+  test('erro', (done) => {
+    checkLinks(mock.checkLinksObj, '../test/text.md')
+      .then((result) => {
+        expect(result).toEqual({
+          file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\test\\text.md',
+          href: 'http://noddddejs.org/pt-br/',
+          message: 'getaddrinfo ENOTFOUND noddddejs.org',
+          statusCode: 404,
+          text: 'Node js',
+        });
         done();
       });
   });
