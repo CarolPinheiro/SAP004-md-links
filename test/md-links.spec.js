@@ -48,12 +48,25 @@ describe('mdLinks', () => {
 });
 
 describe('checkLinks', () => {
-  test('erro', (done) => {
+  test('Http link incorrect', (done) => {
     checkLinks(mock.checkLinksObj, '../test/text.md')
       .then((result) => {
         expect(result).toEqual({
           file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\test\\text.md',
           href: 'http://noddddejs.org/pt-br/',
+          message: 'getaddrinfo ENOTFOUND noddddejs.org',
+          statusCode: 404,
+          text: 'Node js',
+        });
+        done();
+      });
+  });
+  test('Https link incorrect', (done) => {
+    checkLinks(mock.checkLinksObjHttps, '../test/text.md')
+      .then((result) => {
+        expect(result).toEqual({
+          file: 'C:\\Users\\ceopi\\Documents\\Laboratoria\\test\\text.md',
+          href: 'https://noddddejs.org/pt-br/',
           message: 'getaddrinfo ENOTFOUND noddddejs.org',
           statusCode: 404,
           text: 'Node js',
