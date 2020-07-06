@@ -29,7 +29,7 @@ Para que todas as sub-dependências do NPM sejam exibidas, e assim você consiga
 Para utilizar a biblioteca, após a instalação, basta digitar:
 
     md-links <pasta ou arquivo desejado>
-Este comando por si só já irá fazer a biblioteca funcionar, contudo se no diretório informado não houver nenhum arquivo Markdown, uma mensagem de erro subirá no console para o usuário informando o ocorrido.
+Este comando por si só já irá fazer a biblioteca funcionar, contudo cabe ao usuário saber se o diretório informado por ele possui algum arquivo markdown, caso contrário a lib não terá como funcionar.
 
 Dentre as opções que a lib oferece, o usuário também poderá conferir se seus links estão funcionando apenas digitando:
 
