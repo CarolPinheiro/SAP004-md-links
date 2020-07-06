@@ -45,9 +45,13 @@ E se quiser somar nessas estatísticas quantos links daquele total se encontram 
 ## 4. Versões utilizadas dos equipamentos
 Neste projeto foram utilizados os seguintes programas, bibliotecas e suas respectivas versões:
 [Recursive-readdir](https://www.npmjs.com/package/recursive-readdir)- Versão 0.0.4
+
 [Chalk](https://www.npmjs.com/package/chalk)- Versão 4.1.0
+
 [Node.js](https://nodejs.org/en/)- Versão 12.16.1
+
 [NPM](https://nodejs.org/en/)- Versão 6.14.5
+
 OS - Windows 10 Home
 
 ## Autores
