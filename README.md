@@ -7,11 +7,11 @@ Essa biblioteca foi desenvolvida com a ideia de ao ser passado o caminho de um a
 ## 2. Instalação e Desinstalação
 Para instalar o projeto, basta abrir qualquer terminal e digitar:
 
-    npm install -g carolpinheiro/md-links
+    npm install -g carolpinheiro/SAP004-md-links
 Esse comando irá instalar a biblioteca globalmente, então ela poderá ser usada em qualquer pasta.
 Vale ressaltar que alguns sistemas operacionais (Linux, MacOS) podem não funcionar com o comando citado acima, então tente com:
 
-    sudo npm install -g carolpinheiro/md-links
+    sudo npm install -g carolpinheiro/SAP004-md-links
 
 Caso após a utilização, se deseje retirar a biblioteca da máquina, basta digitar:
 
